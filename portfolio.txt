@@ -1,0 +1,45 @@
+Portfolio json (GET /api/v1/portfolio):
+{
+  "resume_url": "http://uploads.pipeline/path/to/resume.txt",
+  "resume_file_name": "resume.doc",
+  "resume_file_size": 1430,
+  "resume_content_type": "text/plain",
+  "education_level": "post_secondary_certificate",
+  "total_career_experience": "three_to_five_years",
+  "career_level": "mid_level_manager",
+  "minimum_salary": "50000_dollars",
+  "summary": "I am a developer. You should hire me.",
+  "keywords": "ruby java rails play",
+  "street1": "123 Any St.",
+  "street2": null,
+  "city": "Raleigh",
+  "state": "NC",
+  "postal_code": "12345",
+  "contact_number": "555-555-5555",
+  "relocation": false,
+  "resume_updated_at": "2011-11-29T17:38:32-05:00",
+  "job_type": "full_time"
+}
+
+Valid keys and values (w/ descriptions):
+resume_url: URL of the resume file. Read only.
+resume_file_name: File name of the resume. Read only.
+resume_file_size: Size of the resume in bytes. Read only.
+resume_content_type: Content type of the resume. Read only.
+resume_updated_at: Last modified datetime of the resume. Read only.
+education_level: some_college_courses, associates_degree, bachelors_degree, post_baccalaureate_certificate, masters_degree, post_masters_certificate, first_professional_degree, doctoral_degree. Maximum achieved education by the user. Required.
+total_career_experience: none, one_to_two_years, three_to_five_years, six_to_ten_years, eleven_to_twenty_years, twenty_plus_years. Year range of total experience the user has. Required.
+career_level: entry_student, entry_non_student, experienced, mid_level_manager, manager, executive, senior_executive, other. Stage of user's career. Required.
+minimum_salary: 10000_dollars, 20000_dollars, 30000_dollars, 40000_dollars, 50000_dollars, 60000_dollars, 70000_dollars, 80000_dollars, 90000_dollars. Minimum salary the user is interested in making.
+summary: Free form text (255 char max).
+keywords: Free form text (no limit). Random buzz-words.
+street1: Free form text (255 char max).
+street2: Free form text (255 char max).
+city: Free form text (255 char max).
+state: Free form text (255 char max). Required.
+postal_code: Free form text (255 char max). Required.
+contact_number: Free form text (255 char max). User's phone number
+relocation: Boolean. Is the user willing to relocate for a job?
+job_type: full_time, part_time, internship, contractor. Type of job the user would like.
+
+POST the portfolio json structured like above to create a portfolio for a user. PUT an updated json to edit.

@@ -1,0 +1,41 @@
+Note that the "url" and "apply_url" are urls into the web application. Using the API, they would be "https://pipeline/api/v1/jobs/:id" and "https://pipeline/api/v1/jobs/:id/appy" respectively.
+
+Job post json (search) (GET /api/v1/jobs/search?search[keywords]=computers&search[location]=NC&search[job_type]=full_time&search[distance]=25_miles):
+[
+ {
+   "id": "1523-computer-security-incident-responder",
+   "city": "Syracuse",
+   "posted_on": "2011-10-07",
+   "title": "Computer Security Incident Responder",
+   "company": "JPMorgan Chase",
+   "description": "The JPMorgan Chase Technology Center on the campus of Syracuse University is a firm-wide Center of Excellence for Information Security and Risk Management as well as a test bed for technology innovation.&amp;nbsp; The Tech center is a key component of our unique, industry leading partnership with Syracuse University.<br />\n<br />\n",
+   "state": "NY",
+   "url": "https://pipeline/jobs/1523-computer-security-incident-responder"
+ }
+]
+
+Valid parameters and values are:
+search[keywords]: Free form text
+search[location]: Free form text
+search[job_type]: full_time, part_time
+search[distance]: 25_miles, 50_miles, 75_miles, 100_miles
+
+Job post json (details) (GET /api/v1/jobs/:id):
+{
+ "id": "1523-computer-security-incident-responder",
+ "description": "The JPMorgan Chase Technology Center on the campus of Syracuse University is a firm-wide Center of Excellence for Information Security and Risk Management as well as a test bed for technology innovation.&amp;nbsp; The Tech center is a key component of our unique, industry leading partnership with Syracuse University.<br />\n<br />\n",
+ "state": "NY",
+ "job_type": "Full Time",
+ "close_on": "2011-12-07",
+ "posted_on": "2011-10-07",
+ "apply_url": "https://pipeline/job_inquiries?job_post_id=1523",
+ "salary": "75000",
+ "url": "https://pipeline/jobs/1523-computer-security-incident-responder",
+ "company": "JPMorgan Chase",
+ "title": "Computer Security Incident Responder",
+ "city": "Syracuse",
+ "salary_type": "specified_amount",
+ "requisition_number": "110060072"
+}
+
+Job post apply is a POST to /api/v1/jobs/1523-computer-security-incident-responder/apply. The details json will be returned.
