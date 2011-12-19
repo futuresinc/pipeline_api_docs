@@ -9,6 +9,7 @@ GET /api/v1/industries.json
 GET /api/v1/industries/:id.json
 GET /api/v1/jobs/search.json
 GET /api/v1/jobs/:id.json
+POST /api/v1/user.json
 
 Authentication is achieved with basic auth using the user's email and password. 
 
@@ -17,3 +18,5 @@ POST /api/v1/jobs/:id/apply.json
 GET /api/v1/portfolio.json
 POST /api/v1/portfolio.json
 PUT /api/v1/portfolio.json
+GET /api/v1/user.json
+PUT /api/v1/user.json
