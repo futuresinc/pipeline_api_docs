@@ -1,5 +1,14 @@
 Portfolio json (GET /api/v1/portfolio):
 {
+  "first_name": "John",
+  "last_name": "Dough",
+  "military_status": "active_duty",
+  "estimated_separation_on": "2012-03-21",
+  "rank": "first_lieutenant",
+  "service": "army",
+  "moc_code": "11B",
+  "security_clearance": "active",
+  "military_installation": "bragg",
   "resume_url": "http://uploads.pipeline/path/to/resume.txt",
   "resume_file_name": "resume.doc",
   "resume_file_size": 1430,
@@ -22,6 +31,15 @@ Portfolio json (GET /api/v1/portfolio):
 }
 
 Valid keys and values (w/ descriptions):
+first_name: Free form text (255 char max). User's first name.
+last_name: Free form text (255 char max). User's last name.
+military_status: none, active_duty, retired_military, veteran_prior_service, reservist, national_guard, spouse_servicemember_retiree, spouse_of_a_veteran, other_family_member, other. User's military status.
+estimated_separation_on: Date in the form of yyyy-mm-dd. Estimated date on which the user will separate from the military. Required if active_duty or national_guard.
+rank: general, lieutenant_general, major_general, brigadier_general, colonel, lieutenant_colonel, major, captain, first_lieutenant, second_lieutenant, master_warrant_officer_5, chief_warrant_officer_4, chief_warrant_officer_3, chief_warrant_officer_2, warrant_officer_1, command_sergeant_major, sergeant_major, first_sergeant, master_sergeant, sergeant_first_class, staff_sergeant, sergeant, corporal, specialist, private_first_class, private_second_class, private. User's military rank. Required.
+service: army, navy, air_force, marine_corps, coast_guard, national_guard. Branch of service. Required.
+moc_code: Free form text. A single MOC code that describes the user. Required.
+security_clearance: decline_to_answer, inactive, active. User's security clearance. 
+military_installation: Free form text (255 char max). Military base the user is stationed at.
 resume_url: URL of the resume file. Read only.
 resume_file_name: File name of the resume. Read only.
 resume_file_size: Size of the resume in bytes. Read only.
