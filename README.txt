@@ -15,8 +15,16 @@ Authentication is achieved with basic auth using the user's email and password.
 
 Authenticated APIs:
 POST /api/v1/jobs/:id/apply.json
+
 GET /api/v1/portfolio.json
 POST /api/v1/portfolio.json
 PUT /api/v1/portfolio.json
+POST /api/v1/portfolio/military_histories.json
+PUT /api/v1/portfolio/military_histories/:id.json
+DELETE /api/v1/portfolio/military_histories/:id.json
+POST /api/v1/portfolio/civilian_histories.json
+PUT /api/v1/portfolio/civilian_histories/:id.json
+DELETE /api/v1/portfolio/civilian_histories/:id.json
+
 GET /api/v1/user.json
 PUT /api/v1/user.json

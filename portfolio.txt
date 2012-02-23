@@ -27,7 +27,46 @@ Portfolio json (GET /api/v1/portfolio):
   "contact_number": "555-555-5555",
   "relocation": false,
   "resume_updated_at": "2011-11-29T17:38:32-05:00",
-  "job_type": "full_time"
+  "job_type": "full_time",
+  "civilian_history": [
+    {
+      "id": 39393,
+      "description": "Received customer food and drink orders, provided money handling service, cleaned establishment, and provided overall customer service.",
+      "job_title": "Server",
+      "started_on": "2011-03-01",
+      "ended_on": "2011-06-01",
+      "job_function": "hospitality",
+      "company_name": "Cheers",
+      "city": "Durham",
+      "state": "north_carolina",
+      "postal_code": "27703"
+    },
+    {
+      "id": 39399,
+      "description": "Provided recruiting support to the US Army.",
+      "job_title": "Marketing Specialist",
+      "started_on": "2010-05-01",
+      "ended_on": "2010-06-01",
+      "job_function": "marketing",
+      "company_name": "Marketing, Ltd.",
+      "city": "Columbia",
+      "state": "south_carolina",
+    }
+  ],
+  "military_history": [
+    {
+      "id": 40203,
+      "description": "Trained and led junior soldiers in infantry tactics in both peace time and deployments.",
+      "branch": "army",
+      "started_on": "2004-03-01",
+      "ended_on": "2005-05-01",
+      "rank": "E-4",
+      "moc": "11B2P",
+      "service_field": "infantry",
+      "city": "",
+      "state": "",
+    }
+  ]
 }
 
 Valid keys and values (w/ descriptions):
@@ -35,7 +74,7 @@ first_name: Free form text (255 char max). User's first name.
 last_name: Free form text (255 char max). User's last name.
 military_status: none, active_duty, retired_military, veteran_prior_service, reservist, national_guard, spouse_servicemember_retiree, spouse_of_a_veteran, other_family_member, other. User's military status.
 estimated_separation_on: Date in the form of yyyy-mm-dd. Estimated date on which the user will separate from the military. Required if active_duty or national_guard.
-rank: general, lieutenant_general, major_general, brigadier_general, colonel, lieutenant_colonel, major, captain, first_lieutenant, second_lieutenant, master_warrant_officer_5, chief_warrant_officer_4, chief_warrant_officer_3, chief_warrant_officer_2, warrant_officer_1, command_sergeant_major, sergeant_major, first_sergeant, master_sergeant, sergeant_first_class, staff_sergeant, sergeant, corporal, specialist, private_first_class, private_second_class, private. User's military rank. Required.
+rank: O-10 O-9 O-8 O-7 O-6 O-5 O-4 O-3 O-2 O-1 W-5 W-4 W-3 W-2 W-1 E-9 E-8 E-7 E-6 E-5 E-4 E-3 E-2 E-1
 service: army, navy, air_force, marine_corps, coast_guard, national_guard. Branch of service. Required.
 moc_code: Free form text. A single MOC code that describes the user. Required.
 security_clearance: decline_to_answer, inactive, active. User's security clearance. 
@@ -59,5 +98,47 @@ postal_code: Free form text (255 char max). Required.
 contact_number: Free form text (255 char max). User's phone number
 relocation: Boolean. Is the user willing to relocate for a job?
 job_type: full_time, part_time, internship, contractor. Type of job the user would like.
+civilian_history: Array of civilian_history structures, definied below.  May be empty.
+military_history: Array of military_history structures, definied below.  May be empty.
 
 POST the portfolio json structured like above to create a portfolio for a user. PUT an updated json to edit.
+
+Civilian and Military history are included in a GET, but are ignored in a PUT or POST, as they're updated with a separate API, below:
+
+
+Civilian History json (POST /api/v1/portfolio/civilian_histories)
+                      (PUT /api/v1/portfolio/civilian_histories/:id)
+                      (DELETE /api/v1/portfolio/civilian_histories/:id)
+
+POST and PUT return the full Profile json or an errors array.  Delete returns just a status code.
+
+Civilian History:
+
+id: Int, used to reference previously created history for PUT/DELETE.
+description: Free form text or basic sanitized HTML (no limit).  Description of civilian job.
+job_title: Free form text (255 char max).
+started_on: Date (YYYY-MM-DD).
+ended_on: Date (YYYY-MM-DD).
+job_function: accounting_finance_insurance administrative_clerical banking_real_estate_mortgage construction_skill_trades business_strategic_management creative_design customer_support_client_care editorial_writing education_training engineering food_services hospitality human_resources installation_maintenance_repair it research_and_development software_development legal logistics_transportation manufacturing_production_operations marketing medical_health project_program_management quality_assurance sales_retail_business_development retail_business_development security_protective_services
+company_name: Free form text (255 char max).
+city: Free form text (255 char max).
+state: Lower case full state name separated by underscores:  "north_carolina"
+
+Military History json (POST /api/v1/portfolio/military_histories)
+                      (PUT /api/v1/portfolio/military_histories/:id)
+                      (DELETE /api/v1/portfolio/military_histories/:id)
+
+POST and PUT return the full Profile json or an errors array.  Delete returns just a status code.
+
+Military History:
+
+id: Int, used to reference previously created history for PUT/DELETE.
+description: Free form text or basic sanitized HTML (no limit).  Description of military job.
+branch: army navy air_force marine_corps coast_guard national_guard
+started_on: Date (YYYY-MM-DD).
+ended_on: Date (YYYY-MM-DD).
+rank: O-10 O-9 O-8 O-7 O-6 O-5 O-4 O-3 O-2 O-1 W-5 W-4 W-3 W-2 W-1 E-9 E-8 E-7 E-6 E-5 E-4 E-3 E-2 E-1
+moc: Free form text. A single MOC code that describes the history.
+service_field: air_defense_artillery adjutant_general army_nurse_corps armor aviation civil_affairs chaplains chemical dental_corps engineer field_artillery finance infantry judge_advocate_general medical_corps medical_service_corps military_intelligence military_police ordnance psychological_operations quartermaster signal special_forces army_medical_specialist_corps transportation veterinary_corps
+city: Free form text (255 char max).
+state: Lower case full state name separated by underscores:  "north_carolina"
