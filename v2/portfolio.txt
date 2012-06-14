@@ -74,7 +74,7 @@ last_name: Free form text (255 char max). User's last name.
 military_status: none, service_member, veteran, retired_military, military_spouse_family. User's military status.
 estimated_separation_on: Date in the form of yyyy-mm-dd. Estimated date on which the user will separate from the military. Required if active_duty or national_guard.
 rank: O-10 O-9 O-8 O-7 O-6 O-5 O-4 O-3 O-2 O-1 W-5 W-4 W-3 W-2 W-1 E-9 E-8 E-7 E-6 E-5 E-4 E-3 E-2 E-1
-service: army, navy, air_force, marine_corps, coast_guard, national_guard. Branch of service. Required.
+service: air_force, air_force_reserve, air_national_guard, army, army_national_guard, army_reserve, coast_guard, coast_guard_reserve, marine_corps, marine_corps_reserve, navy, navy_reserve. Branch of service. Required.
 moc_code: Free form text. A single MOC code that describes the user. Required.
 security_clearance: decline_to_answer, inactive, active. User's security clearance. 
 military_installation: Free form text (255 char max). Military base the user is stationed at.
