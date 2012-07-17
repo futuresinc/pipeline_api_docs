@@ -2,8 +2,7 @@ Note that the "url" and "apply_url" are urls into the web application. Using the
 
 The field "requires_ats_apply" denotes whether an application to this job must occur outside of pipeline. If "true", then an application can only be performed by the user in a web browser at the "url" address.
 
-Jobs returned can be locally available jobs from Pipeline or returned via web service from an aggregator, such as Indeed.  A single response
-can return a mixture of results.
+Jobs returned can be locally available jobs from Pipeline or returned via web service from an aggregator, such as Indeed. A single response can return a mixture of results.
 
 Job post json (search) (GET /api/v2/jobs/search?search[keywords]=computers&search[location]=NC&search[job_type]=full_time&search[distance]=25_miles):
 [
@@ -39,6 +38,8 @@ search[keywords]: Free form text
 search[location]: Free form text
 search[job_type]: full_time, part_time
 search[distance]: 25_miles, 50_miles, 75_miles, 100_miles
+
+Additional job details can be fetched for pipeline jobs, but not for results from a job aggregator. Attempts to do so will result in a 404 response.
 
 Job post json (details) (GET /api/v2/jobs/:id):
 {
