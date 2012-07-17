@@ -1,4 +1,4 @@
-Note that the "url" and "apply_url" are urls into the web application. Using the API, they would be "https://pipeline/api/v2/jobs/:id" and "https://pipeline/api/v2/jobs/:id/appy" respectively.
+Note that the "url" and "apply_url" are urls into the web application. Using the API, they would be "https://pipeline/api/v2/jobs/:id" and "https://pipeline/api/v2/jobs/:id/apply" respectively.
 
 Jobs returned can be locally available jobs from Pipeline or returned via web service from an aggregator, such as Indeed.  A single response
 can return a mixture of results.
@@ -56,4 +56,5 @@ Job post json (details) (GET /api/v2/jobs/:id):
  "requisition_number": "110060072"
 }
 
-Job post apply is a POST to /api/v2/jobs/1523-computer-security-incident-responder/apply. The details json will be returned.
+There are 
+Job post apply is a POST with an empty body to /api/v2/jobs/1523-computer-security-incident-responder/apply. The details json will be returned.
