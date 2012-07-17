@@ -1,5 +1,7 @@
 Note that the "url" and "apply_url" are urls into the web application. Using the API, they would be "https://pipeline/api/v2/jobs/:id" and "https://pipeline/api/v2/jobs/:id/apply" respectively.
 
+The field "requires_ats_apply" denotes whether an application to this job must occur outside of pipeline. If "true", then an application can only be performed by the user in a web browser at the "url" address.
+
 Jobs returned can be locally available jobs from Pipeline or returned via web service from an aggregator, such as Indeed.  A single response
 can return a mixture of results.
 
