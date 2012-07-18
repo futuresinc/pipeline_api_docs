@@ -1,10 +1,22 @@
 Note that the "url" and "apply_url" are urls into the web application. Using the API, they would be "https://<pipeline_domain>/api/v2/jobs/:id" and "https://<pipeline_domain>/api/v2/jobs/:id/apply" respectively.
 
-The field "requires_ats_apply" denotes whether an application to this job must occur outside of pipeline. If "true", then an application can only be performed by the user in a web browser at the "url" address.
-
-The field "has_details" denotes whether the details for the job may be fetched. Attempts to fetch details for jobs where "has_details" is "false" will return 404.
-
 Jobs returned can be locally available jobs from Pipeline or returned via web service from an aggregator, such as Indeed. A single response can return a mixture of results.
+
+Field definitions:
+id: This job's unique identifier.
+title: The title of the job.
+description: The description of the job.
+city: The city where the job is located.
+state: The state where the job is located.
+company: Name of the company posting the job.
+posted_on: The date the job was posted in yyyy-mm-dd format.
+url: The URL of the individual web page for this job.
+requires_ats_apply: Denotes whether an application to this job must occur outside of pipeline. If "true", then an application can only be performed by the user in a web browser at the "url" address.
+has_details: Denotes whether the details for the job may be fetched. Attempts to fetch details for jobs where "has_details" is "false" will return 404.
+apply_url: URL of the web page that the job may be applied at.
+salary: Salary for this job. Rarely present.
+salary_type: Type of salary. One of per_year or per_hour.
+requisition_number: The requisition number as assigned by the company.
 
 **SEARCH**
 
