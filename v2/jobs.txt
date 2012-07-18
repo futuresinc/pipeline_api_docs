@@ -2,7 +2,11 @@ Note that the "url" and "apply_url" are urls into the web application. Using the
 
 The field "requires_ats_apply" denotes whether an application to this job must occur outside of pipeline. If "true", then an application can only be performed by the user in a web browser at the "url" address.
 
+The field "has_details" denotes whether the details for the job may be fetched. Attempts to fetch details for jobs where "has_details" is "false" will return 404.
+
 Jobs returned can be locally available jobs from Pipeline or returned via web service from an aggregator, such as Indeed. A single response can return a mixture of results.
+
+**SEARCH**
 
 Job post json (search) (GET /api/v2/jobs/search?search[keywords]=computers&search[location]=NC&search[job_type]=full_time&search[distance]=25_miles):
 [
@@ -15,7 +19,8 @@ Job post json (search) (GET /api/v2/jobs/search?search[keywords]=computers&searc
    "description": "The JPMorgan Chase Technology Center on the campus of Syracuse University is a firm-wide Center of Excellence for Information Security and Risk Management as well as a test bed for technology innovation.&amp;nbsp; The Tech center is a key component of our unique, industry leading partnership with Syracuse University.<br />\n<br />\n",
    "state": "NY",
    "url": "https://pipeline/jobs/1523-computer-security-incident-responder"
-   "requires_ats_apply": "true"
+   "requires_ats_apply": "true",
+   "has_details": "true"
  }
 ]
 
@@ -30,7 +35,8 @@ Jobs from Indeed (aggregator) will instead have a 16 char alphanumeric id, and a
   "company": "Futures, Inc.",
   "posted_on": "2012-04-10",
   "url": "http://www.indeed.com/viewjob?jk=579bc5d7a3d30bf9&qd=d8ujaJN9ydMWUFT7aTpw0SGA9rpTdTNx9Kq5RIvEG6wbxO7H7iJ9xTE-Ft9RRtibvaauq8PNtjNMHK2vZJ-eoeoCFLMibOCEabUahnuewCk&indpubnum=294298244185573&rjs=1&atk=16tv089hj0k1113b",
-  "requires_ats_apply": "true"
+  "requires_ats_apply": "true",
+  "has_details": "false"
 }
 
 Valid parameters and values are:
@@ -39,25 +45,39 @@ search[location]: Free form text
 search[job_type]: full_time, part_time
 search[distance]: 25_miles, 50_miles, 75_miles, 100_miles
 
-Additional job details can be fetched for pipeline jobs, but not for results from a job aggregator. Attempts to do so will result in a 404 response.
+**DETAILS**
+
+Additional job details can be fetched for jobs where "has_details" is set to "true". Attempts to fetch details for jobs with "has_details" set to "false" will result in a 404 response.
 
 Job post json (details) (GET /api/v2/jobs/:id):
 {
- "id": "1523-computer-security-incident-responder",
- "description": "The JPMorgan Chase Technology Center on the campus of Syracuse University is a firm-wide Center of Excellence for Information Security and Risk Management as well as a test bed for technology innovation.&amp;nbsp; The Tech center is a key component of our unique, industry leading partnership with Syracuse University.<br />\n<br />\n",
- "state": "NY",
- "job_type": "Full Time",
- "close_on": "2011-12-07",
- "posted_on": "2011-10-07",
- "apply_url": "https://pipeline/job_inquiries?job_post_id=1523",
- "salary": "75000",
- "url": "https://pipeline/jobs/1523-computer-security-incident-responder",
- "company": "JPMorgan Chase",
- "title": "Computer Security Incident Responder",
- "city": "Syracuse",
- "salary_type": "specified_amount",
- "requisition_number": "110060072"
+  "id": "1523-computer-security-incident-responder",
+  "description": "The JPMorgan Chase Technology Center on the campus of Syracuse University is a firm-wide Center of Excellence for Information Security and Risk Management as well as a test bed for technology innovation.&amp;nbsp; The Tech center is a key component of our unique, industry leading partnership with Syracuse University.<br />\n<br />\n",
+  "state": "NY",
+  "job_type": "Full Time",
+  "close_on": "2011-12-07",
+  "posted_on": "2011-10-07",
+  "apply_url": "https://pipeline/job_inquiries?job_post_id=1523",
+  "salary": "75000",
+  "url": "https://pipeline/jobs/1523-computer-security-incident-responder",
+  "company": "JPMorgan Chase",
+  "title": "Computer Security Incident Responder",
+  "city": "Syracuse",
+  "salary_type": "specified_amount",
+  "requisition_number": "110060072"
 }
 
-There are 
-Job post apply is a POST with an empty body to /api/v2/jobs/1523-computer-security-incident-responder/apply. The details json will be returned.
+**APPLY**
+
+Job post apply is a POST with an empty body to /api/v2/jobs/1523-computer-security-incident-responder/apply. The status of the "apply" is returned.
+
+A successful application to a pipeline job:
+{
+  "status": "success"
+}
+
+An attempt to apply to a job that requires the application to take place in an ats system:
+{
+  "status": "requires_ats_apply",
+  "ats_url": "https://jobs.example.com/job/11212434342"
+}

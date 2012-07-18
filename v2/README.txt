@@ -33,4 +33,4 @@ PUT /api/v2/user
 V2 Notes:
 
 * Changes to valid values for portfolio military_status field.
-* Inclusion of results from Job Aggregators (Indeed). A GET to fetch additional details for an aggregated job is not supported.
+* Inclusion of results from Job Aggregators (Indeed). A GET to fetch additional details for an aggregated job ("has_details" set to "false") is not supported.
