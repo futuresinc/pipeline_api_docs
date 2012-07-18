@@ -1,4 +1,4 @@
-Note that the "url" and "apply_url" are urls into the web application. Using the API, they would be "https://pipeline/api/v2/jobs/:id" and "https://pipeline/api/v2/jobs/:id/apply" respectively.
+Note that the "url" and "apply_url" are urls into the web application. Using the API, they would be "https://<pipeline_domain>/api/v2/jobs/:id" and "https://<pipeline_domain>/api/v2/jobs/:id/apply" respectively.
 
 The field "requires_ats_apply" denotes whether an application to this job must occur outside of pipeline. If "true", then an application can only be performed by the user in a web browser at the "url" address.
 
@@ -18,7 +18,7 @@ Job post json (search) (GET /api/v2/jobs/search?search[keywords]=computers&searc
    "company": "JPMorgan Chase",
    "description": "The JPMorgan Chase Technology Center on the campus of Syracuse University is a firm-wide Center of Excellence for Information Security and Risk Management as well as a test bed for technology innovation.&amp;nbsp; The Tech center is a key component of our unique, industry leading partnership with Syracuse University.<br />\n<br />\n",
    "state": "NY",
-   "url": "https://pipeline/jobs/1523-computer-security-incident-responder"
+   "url": "https://<pipeline_domain>/jobs/1523-computer-security-incident-responder"
    "requires_ats_apply": "true",
    "has_details": "true"
  }
@@ -57,9 +57,9 @@ Job post json (details) (GET /api/v2/jobs/:id):
   "job_type": "Full Time",
   "close_on": "2011-12-07",
   "posted_on": "2011-10-07",
-  "apply_url": "https://pipeline/job_inquiries?job_post_id=1523",
+  "apply_url": "https://<pipeline_domain>/job_inquiries?job_post_id=1523",
   "salary": "75000",
-  "url": "https://pipeline/jobs/1523-computer-security-incident-responder",
+  "url": "https://<pipeline_domain>/jobs/1523-computer-security-incident-responder",
   "company": "JPMorgan Chase",
   "title": "Computer Security Incident Responder",
   "city": "Syracuse",
