@@ -93,3 +93,9 @@ An attempt to apply to a job that requires the application to take place in an a
   "status": "requires_ats_apply",
   "ats_url": "https://jobs.example.com/job/11212434342"
 }
+
+Attempting to apply to a job twice will return a 422 with the following error:
+{
+  "status": "failed",
+  "errors": "You have already applied for this job and the employer currently has access to your Portfolio."
+}
