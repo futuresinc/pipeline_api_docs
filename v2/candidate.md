@@ -10,7 +10,6 @@ Available search criteria
 * `keywords` Keywords used in the profile.
 * `location` City, State, or Postal code.
 * `distance` Distance in miles from `location`.
-* `career_level` One of `entry_student` `entry_non_student` `some_work_experience` `experienced` `mid_level_manager` `manager` `executive` `senior_executive` `other`.
 * `job_type` One of `full_time` `part_time`.
 * `military_status` One of `service_member` `veteran` `retired_military` `military_spouse_family`.
 * `last_activity` Time period in which the user was last active on the site. One of `since_yesterday` `last_3_days` `last_week` `last_15_days` `last_30_days` `last_60_days` `last_90_days`.
@@ -25,6 +24,8 @@ Available search criteria
 * `maximum_security_clearance` Maximum security clearance. One of `inactive_confidential` `inactive_secret` `inactive_top_secret_or_higher` `active_confidential` `active_secret` `active_top_secret` `active_top_secret_sci_or_higher`.
 * `minimum_education_level` One of `less_than_a_high_school_diploma` `high_school_diploma` `post_secondary_certificate``` `some_college_courses` `associates_degree` `bachelors_degree` `post_baccalaureate_certificate` `masters_degree` `post_masters_certificate` `first_professional_degree` `doctoral_degree` `post_doctoral_training`.
 * `maximum_education_level` One of `less_than_a_high_school_diploma` `high_school_diploma` `post_secondary_certificate``` `some_college_courses` `associates_degree` `bachelors_degree` `post_baccalaureate_certificate` `masters_degree` `post_masters_certificate` `first_professional_degree` `doctoral_degree` `post_doctoral_training`.
+* `minimum_career_level` One of `entry_student` `entry_non_student` `some_work_experience` `experienced` `mid_level_manager` `manager` `executive` `senior_executive` `other`.
+* `maximum_career_level` One of `entry_student` `entry_non_student` `some_work_experience` `experienced` `mid_level_manager` `manager` `executive` `senior_executive` `other`.
 * `availability_date` Return users that have stated that they will be available by this date. Should be in ISO 8601 format.
 * `citizenship` One of `us_citizen` `non_us_citizen` `can_only_work_for_current_employer` `need_sponsorship`.
 * `relocation` Set to '1' to only return users willing to relocate. Set to '0' to only return users not willing to relocate.
