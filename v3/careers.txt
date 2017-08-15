@@ -1,4 +1,4 @@
-GET /api/v2/careers
+GET /api/v3/careers
 
 Params:
 
@@ -20,12 +20,12 @@ state_salaries:  array of hashes:
   average_salary: in dollars per year, if available
 
 
-GET /api/v2/careers/search?q=<keywords>
+GET /api/v3/careers/search?q=<keywords>
 
 Returns array of hashes as per above.
 
 
-GET /api/v2/careers/<api_safe_onet_soc_code>
+GET /api/v3/careers/<api_safe_onet_soc_code>
 
 Returns a single career hash.  As above, with extra fields:
 
