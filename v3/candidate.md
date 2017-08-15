@@ -37,7 +37,7 @@ Examples Requests
 Criteria should be submitted as query parameters.
 
 * `GET /candidate/search?keywords=experienced&moc_codes=11b` returns the jobs seekers that have the moc/mos code of '11b' and match the keyword of 'experienced'.
-* `GET /candidate/search?member_sites=h2h.jobs` returns only the jobs seekers who have signed up on H2H.
+* `GET /candidate/search?member_sites=pipeline.futuresinc.com` returns only the jobs seekers who have signed up on Pipeline.
 
 Example Response
 ----------------

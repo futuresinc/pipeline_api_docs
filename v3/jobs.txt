@@ -1,4 +1,4 @@
-Note that the "url" and "apply_url" are urls into the web application. Using the API, they would be "https://<pipeline_domain>/api/v2/jobs/:id" and "https://<pipeline_domain>/api/v2/jobs/:id/apply" respectively.
+Note that the "url" and "apply_url" are urls into the web application. Using the API, they would be "https://<pipeline_domain>/api/v3/jobs/:id" and "https://<pipeline_domain>/api/v3/jobs/:id/apply" respectively.
 
 Jobs returned can be locally available jobs from Pipeline or returned via web service from an aggregator, such as Indeed. A single response can return a mixture of results.
 
@@ -20,7 +20,7 @@ requisition_number: The requisition number as assigned by the company.
 
 **SEARCH**
 
-Job post json (search) (GET /api/v2/jobs/search?search[keywords]=computers&search[location]=NC&search[job_type]=full_time&search[distance]=25_miles):
+Job post json (search) (GET /api/v3/jobs/search?search[keywords]=computers&search[location]=NC&search[job_type]=full_time&search[distance]=25_miles):
 [
  {
    "id": "1523-computer-security-incident-responder",
@@ -64,7 +64,7 @@ disable_aggregation: Set to '1' to disable the supplementing of pipeline jobs wi
 
 Additional job details can be fetched for jobs where "has_details" is set to "true". Attempts to fetch details for jobs with "has_details" set to "false" will result in a 404 response.
 
-Job post json (details) (GET /api/v2/jobs/:id):
+Job post json (details) (GET /api/v3/jobs/:id):
 {
   "id": "1523-computer-security-incident-responder",
   "description": "The JPMorgan Chase Technology Center on the campus of Syracuse University is a firm-wide Center of Excellence for Information Security and Risk Management as well as a test bed for technology innovation.&amp;nbsp; The Tech center is a key component of our unique, industry leading partnership with Syracuse University.<br />\n<br />\n",
@@ -84,7 +84,7 @@ Job post json (details) (GET /api/v2/jobs/:id):
 
 **APPLY**
 
-Job post apply is a POST with an empty body to /api/v2/jobs/1523-computer-security-incident-responder/apply. The status of the "apply" is returned.
+Job post apply is a POST with an empty body to /api/v3/jobs/1523-computer-security-incident-responder/apply. The status of the "apply" is returned.
 
 A successful application to a pipeline job:
 {

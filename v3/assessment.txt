@@ -1,4 +1,4 @@
-GET https://h2h.jobs/api/v2/assessment
+GET /api/v3/assessment
 
 Returns an array of hashes:
 
@@ -10,9 +10,9 @@ answers:  hash with:
 
 
 
-GET https://h2h.jobs/api/v2/careers/xxxxxx/yyyyyyyy
+GET /api/v3/careers/xxxxxx/yyyyyyyy
 
-Example:  "https://h2h.jobs/api/v2/careers/123453/12341234"
+Example:  "/api/v3/careers/123453/12341234"
 
 xxxxxx => results from the first 6 (interest) questions from above url
 yyyyyyyy => results from last 8 (skills) questions from above url
