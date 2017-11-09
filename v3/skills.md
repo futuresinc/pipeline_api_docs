@@ -1,13 +1,32 @@
 # Skills
 
+## Object Definitions
+
+Skill
+---
+```
+{ "uuid": String, "skill_type": SkillType, "name": String }
+```
+
+SkillType (enum)
+---
+```
+S (Skill)
+B (...Basic?)
+C (Certificate)
+L (License)
+```
+
+## Endpoints
+
 ## GET /api/v3/related_skills (authenticated)
 
 ### Params:
 ```
-job_titles: [String]
+job_titles: [ String ]
 # optional, default: current_user’s job titles
 
-moc_uuids: [String]
+moc_uuids: [ String ]
 # optional, default: current_user’s moc_uuids
 
 limit: Integer
@@ -16,7 +35,7 @@ limit: Integer
 
 ### Returns:
 ```
-[ { "uuid": String, "name": String } ]
+[ Skill ]
 ```
 
 ## GET /api/v3/search_skills (authenticated)
@@ -25,6 +44,7 @@ limit: Integer
 ```
 keywords: String
 # optional, default: current_user's job titles
+# Space-delimited.
 # The keywords are combined using AND.
 
 certs_and_licenses: Boolean 
@@ -37,6 +57,6 @@ limit: Integer
 
 ### Returns:
 ```
-[ { "uuid": String, "name": String } ]
+[ Skill ]
 ```
 
