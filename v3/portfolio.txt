@@ -28,6 +28,18 @@ Portfolio json (GET /api/v3/portfolio):
   "relocation": false,
   "resume_updated_at": "2011-11-29T17:38:32-05:00",
   "job_type": "full_time",
+  "educations": [
+    {
+      "id": 1,
+      "school_category": null,
+      "enrolled_on": null,
+      "obtained_on": null,
+      "institution": "Real University",
+      "portfolio_id": 3,
+      "field_of_study": "Mechanical Engineering",
+      "employer_profile_id": null,
+    }
+  ],
   "civilian_history": [
     {
       "id": 39393,
@@ -99,6 +111,22 @@ relocation: Boolean. Is the user willing to relocate for a job?
 job_type: full_time, part_time, internship, contractor. Type of job the user would like. (Deprecated. Will be removed in the next version.)
 civilian_history: Array of civilian_history structures, definied below.  May be empty.
 military_history: Array of military_history structures, definied below.  May be empty.
+educations_attributes: Array of educations structures, defined below. May be empty.
+
+
+Educations json:
+  NOTE:
+  * Include 'id' and 'portfolio_id' to update a record
+  * Include '_destroy: true' to delete a record.
+
+id: Int
+school_category: String
+enrolled_on: iso8601 date
+obtained_on: iso8601 date
+institution: String
+portfolio_id: Int
+field_of_study: String
+_destroy: Boolean (setting to 'true' will destroy an existing record)
 
 POST the portfolio json structured like above to create a portfolio for a user. PUT an updated json to edit.
 
