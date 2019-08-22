@@ -59,13 +59,13 @@ Jobs from Indeed (aggregator) will instead have a 16 char alphanumeric id, and a
 ```
 
 Valid parameters and values are:
-`search[keywords]`: Free form text
-`search[location]`: Free form text
-`search[job_type]`: `full_time`, `part_time`
-`search[distance]`: `25_miles`, `50_miles`, `75_miles`, `100_miles`
-`search[exact_title_phrase]`: Free form text. Constrain the matches to include this exact and non-stemmed phrase in the title.
-`search[company_ids]`: A comma delimited list of pipeline company ids. Constrains the matches to jobs associated to the one of the companies in the given list.
-`disable_aggregation`: Set to `1` to disable the supplementing of pipeline jobs with ones from a search aggregator.
+* `search[keywords]`: Free form text
+* `search[location]`: Free form text
+* `search[job_type]`: `full_time`, `part_time`
+* `search[distance]`: `25_miles`, `50_miles`, `75_miles`, `100_miles`
+* `search[exact_title_phrase]`: Free form text. Constrain the matches to include this exact and non-stemmed phrase in the title.
+* `search[company_ids]`: A comma delimited list of pipeline company ids. Constrains the matches to jobs associated to the one of the companies in the given list.
+* `disable_aggregation`: Set to `1` to disable the supplementing of pipeline jobs with ones from a search aggregator.
 
 # DETAILS
 
