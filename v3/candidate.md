@@ -1,11 +1,9 @@
-Candidate Search
-================
+# Candidate Search
 
 This is for the searching of job seekers using keywords and other specific search criteria. A developer token will need to be obtained from Futures and will need to be submitted with each request in the query parameter `token`.
 
 
-Available search criteria
--------------------------
+## Available search criteria
 
 * `keywords` Keywords used in the profile.
 * `location` City, State, or Postal code.
@@ -22,8 +20,8 @@ Available search criteria
 * `maximum_rank` Maximum military rank. One of `E-1` `E-2` `E-3` `E-4` `E-5` `E-6` `E-7` `E-8` `E-9` `W-1` `W-2` `W-3` `W-4` `W-5` `O-1` `O-2` `O-3` `O-4` `O-5` `O-6` `O-7` `O-8` `O-9` `O-10`.
 * `minimum_security_clearance` Minimum security clearance. One of `inactive_confidential` `inactive_secret` `inactive_top_secret_or_higher` `active_confidential` `active_secret` `active_top_secret` `active_top_secret_sci_or_higher`.
 * `maximum_security_clearance` Maximum security clearance. One of `inactive_confidential` `inactive_secret` `inactive_top_secret_or_higher` `active_confidential` `active_secret` `active_top_secret` `active_top_secret_sci_or_higher`.
-* `minimum_education_level` One of `less_than_a_high_school_diploma` `high_school_diploma` `post_secondary_certificate``` `some_college_courses` `associates_degree` `bachelors_degree` `post_baccalaureate_certificate` `masters_degree` `post_masters_certificate` `first_professional_degree` `doctoral_degree` `post_doctoral_training`.
-* `maximum_education_level` One of `less_than_a_high_school_diploma` `high_school_diploma` `post_secondary_certificate``` `some_college_courses` `associates_degree` `bachelors_degree` `post_baccalaureate_certificate` `masters_degree` `post_masters_certificate` `first_professional_degree` `doctoral_degree` `post_doctoral_training`.
+* `minimum_education_level` One of `less_than_a_high_school_diploma` `high_school_diploma` `post_secondary_certificate` `some_college_courses` `associates_degree` `bachelors_degree` `post_baccalaureate_certificate` `masters_degree` `post_masters_certificate` `first_professional_degree` `doctoral_degree` `post_doctoral_training`.
+* `maximum_education_level` One of `less_than_a_high_school_diploma` `high_school_diploma` `post_secondary_certificate` `some_college_courses` `associates_degree` `bachelors_degree` `post_baccalaureate_certificate` `masters_degree` `post_masters_certificate` `first_professional_degree` `doctoral_degree` `post_doctoral_training`.
 * `minimum_career_level` One of `entry_student` `entry_non_student` `some_work_experience` `experienced` `mid_level_manager` `manager` `executive` `senior_executive` `other`.
 * `maximum_career_level` One of `entry_student` `entry_non_student` `some_work_experience` `experienced` `mid_level_manager` `manager` `executive` `senior_executive` `other`.
 * `availability_date` Return users that have stated that they will be available by this date. Should be in ISO 8601 format.
@@ -31,16 +29,14 @@ Available search criteria
 * `relocation` Set to '1' to only return users willing to relocate. Set to '0' to only return users not willing to relocate.
 * `languages` Return users that speak these languages. One of `spanish` `french` `german` `chinese_mandarin` `chinese_cantonese_other` `hindi_urdu` `arabic` `bengali` `portuguese` `russian` `japanese` `punjabi` `african_dialects` `other_asian` `other_middle_eastern` `other_eastern_european`.
 
-Examples Requests
------------------
+## Examples Requests
 
 Criteria should be submitted as query parameters.
 
 * `GET /candidate/search?keywords=experienced&moc_codes=11b` returns the jobs seekers that have the moc/mos code of '11b' and match the keyword of 'experienced'.
 * `GET /candidate/search?member_sites=pipeline.futuresinc.com` returns only the jobs seekers who have signed up on Pipeline.
 
-Example Response
-----------------
+## Example Response
 
 Results will be paginated in groups of 10. The response will be in json. The total number of pages will be returned as a root key named `total_pages`. The results will be under a root key named `results`.
 
