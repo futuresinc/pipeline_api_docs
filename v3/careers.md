@@ -13,6 +13,8 @@ Array of objects representing a Career
 * `title`:  User friendly name of career
 * `link`:  link to career detail page on pipeline website
 * `image_url`:  url of the main image used for the career
+* `image_medium_url`:  url of the main image used for the career in a medium sizing
+* `education_level`: Level of education required for this career. One of `less_than_a_high_school_diploma`, `high_school_diploma`, `post_secondary_certificate`, `some_college_courses`, `associates_degree`, `bachelors_degree`, `post_baccalaureate_certificate`, `masters_degree`, `post_masters_certificate`, `first_professional_degree`, `doctoral_degree`, `post_doctoral_training`.
 * `average_national_salary`:  in dollars per year, if available
 * `state_salaries`:  array of objects:
 *   `state`: 2 character state abbreviation
@@ -31,6 +33,8 @@ Returns a single career object.  As above, with extra fields:
 * `title`:  User friendly name of career
 * `link`:  link to career detail page on pipeline website
 * `image_url`:  url of the main image used for the career
+* `image_medium_url`:  url of the main image used for the career in a medium sizing
+* `education_level`: Level of education required for this career. One of `less_than_a_high_school_diploma`, `high_school_diploma`, `post_secondary_certificate`, `some_college_courses`, `associates_degree`, `bachelors_degree`, `post_baccalaureate_certificate`, `masters_degree`, `post_masters_certificate`, `first_professional_degree`, `doctoral_degree`, `post_doctoral_training`.
 * `average_national_salary`:  in dollars per year, if available
 * `description`:  Long text description of career.
 * `entry_job_title`: Title of the entry-level job for this career
