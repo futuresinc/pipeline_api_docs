@@ -67,7 +67,42 @@
       "city": "",
       "state": "",
     }
-  ]
+  ],
+  "assessment": {
+    "interest": {
+    "questions": ["How do you feel about communication", "How do you feel about finding, analyzing and presenting information"],
+    "answers": ["Don't care", "Like very much"],
+    "career_results": [
+      {
+         "onet_soc_code": "11-1011.00",
+         "api_safe_onet_soc_code": "11-1011-00",
+         "title": "Chief Executives",
+         "industry_name": "Business Management & Administration",
+         "link": "https://pipeline/careers/1-chief-executives",
+         "image_url": "https://pipeline/assets/redesign/career-pathway/11-1011.jpg",
+         "image_medium_url": "https://pipeline/assets/redesign/career-pathway/11-1011-medium.jpg",
+         "education_level": "masters_degree",
+         "average_national_salary": 180000,
+         "projected_openings": 3990,
+         "state_salaries": [
+           {
+              "state": "NC",
+              "average_salary": 170000
+           }
+         ]
+       }
+    ],
+    "industry_results": [
+       {
+         "id": 4,
+         "name": "Business Management & Administration",
+         "link": "https://pipeline/industries/4",
+         "description": "Are you entrepreneurial? Would you enjoy a career t...",
+         "image_url": "https://pipeline/assets/redesign/industry-hero-4.jpg"
+       }
+    ]
+    }
+  }
 }
 ```
 
@@ -144,3 +179,12 @@ Military History:
 * `service_field`: air_defense_artillery adjutant_general army_nurse_corps armor aviation civil_affairs chaplains chemical dental_corps engineer field_artillery finance infantry judge_advocate_general medical_corps medical_service_corps military_intelligence military_police ordnance psychological_operations quartermaster signal special_forces army_medical_specialist_corps transportation veterinary_corps
 * `city`: Free form text (255 char max).
 * `state`: Two letter state abbrv.  "NC" "FL" "MA"
+
+Assessment (interest):
+
+Currently the only available assessment is the "interest" assessment. Other assessment types may be added in the future.
+
+* `questions`: String Array. This is a collection of the question text presented to the user in the order given to the user.
+* `answers`: String Array. This is a collection of the answers to each question in the same order as the questions in the `question` collection.
+* `career_results`: Array of objects in the same format as the [Careers Summary Endpoint](careers.md)
+* `industry_results`: Array of objects in the same format as the [Industries Summary Endpoint](industries.md)
