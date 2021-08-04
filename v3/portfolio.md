@@ -4,6 +4,7 @@
 {
   "first_name": "John",
   "last_name": "Dough",
+  "external_client_id": "S4123",
   "military_status": "service_member",
   "estimated_separation_on": "2012-03-21",
   "rank": "first_lieutenant",
@@ -109,6 +110,7 @@
 Valid keys and values (w/ descriptions):
 * `first_name`: Free form text (255 char max). User's first name. Required.
 * `last_name`: Free form text (255 char max). User's last name. Required.
+* `external_client_id`: Text field (255 char max). Optional field for denoting the user's ID in an external system for integration purposes.
 * `military_status`: none, service_member, veteran, retired_military, military_spouse_family. User's military status.
 * `estimated_separation_on`: Date in the form of yyyy-mm-dd. Estimated date on which the user will separate from the military. (Deprecated. Will be removed in the next version.)
 * `rank`: O-10 O-9 O-8 O-7 O-6 O-5 O-4 O-3 O-2 O-1 W-5 W-4 W-3 W-2 W-1 E-9 E-8 E-7 E-6 E-5 E-4 E-3 E-2 E-1 (Deprecated. Will be removed in the next version.)
