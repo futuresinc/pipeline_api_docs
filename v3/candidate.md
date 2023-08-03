@@ -33,8 +33,8 @@ This is for the searching of job seekers using keywords and other specific searc
 
 Criteria should be submitted as query parameters.
 
-* `GET /candidate/search?keywords=experienced&moc_codes=11b` returns the jobs seekers that have the moc/mos code of '11b' and match the keyword of 'experienced'.
-* `GET /candidate/search?member_sites=pipeline.futuresinc.com` returns only the jobs seekers who have signed up on Pipeline.
+* `GET /candidates/search?keywords=experienced&moc_codes=11b` returns the jobs seekers that have the moc/mos code of '11b' and match the keyword of 'experienced'.
+* `GET /candidates/search?member_sites=pipeline.futuresinc.com` returns only the jobs seekers who have signed up on Pipeline.
 
 ## Example Response
 
